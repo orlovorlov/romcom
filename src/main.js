@@ -3,7 +3,17 @@ var coverImage = document.querySelector('.cover-image')
 var coverTitle = document.querySelector('.cover-title')
 var tagLine1 = document.querySelector('.tagline-1')
 var tagLine2 = document.querySelector('.tagline-2')
-// We've provided a few variables below
+var
+
+// These are our buttons
+var buttonMakeNewCover = document.querySelector('.make-new-button')
+var buttonRandomCover = document.querySelector('.random-cover-button')
+var buttonHome = document.querySelector('.home-button-hidden');
+var buttonSaveCover = document.querySelector('.save-cover-button');
+var buttonViewSaved = document.querySelector('.view-saved-button');
+var formShow = document.querySelector('.form-view')
+
+
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 ];
@@ -12,8 +22,7 @@ var currentCover;
 // Add your event listeners here 👇
 // "random-cover-button"
 //element.addEventListener(event, function, useCapture);
-var buttonRandomCover = document.querySelector('.random-cover-button')
-
+buttonMakeNewCover.addEventListener('click', __________________)
 buttonRandomCover.addEventListener("click", randomizeCover)
 
 
@@ -21,6 +30,11 @@ buttonRandomCover.addEventListener("click", randomizeCover)
 
 
 // We've provided one function to get you started
+function viewForm() {
+  // 
+formShow
+}
+
 randomizeCover()
 
 function randomizeCover() {
