@@ -12,9 +12,9 @@ var currentCover;
 // Add your event listeners here 👇
 // "random-cover-button"
 //element.addEventListener(event, function, useCapture);
+var buttonRandomCover = document.querySelector('.random-cover-button')
 
-
-//document.addevent
+buttonRandomCover.addEventListener("click", randomizeCover)
 
 
 // Create your event handlers and other functions here 👇
