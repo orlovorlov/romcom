@@ -3,7 +3,7 @@ var coverImage = document.querySelector('.cover-image')
 var coverTitle = document.querySelector('.cover-title')
 var tagLine1 = document.querySelector('.tagline-1')
 var tagLine2 = document.querySelector('.tagline-2')
-var
+
 
 // These are our buttons
 var buttonMakeNewCover = document.querySelector('.make-new-button')
@@ -22,7 +22,7 @@ var currentCover;
 // Add your event listeners here 👇
 // "random-cover-button"
 //element.addEventListener(event, function, useCapture);
-buttonMakeNewCover.addEventListener('click', __________________)
+// buttonMakeNewCover.addEventListener('click', __________________)
 buttonRandomCover.addEventListener("click", randomizeCover)
 
 
@@ -31,17 +31,24 @@ buttonRandomCover.addEventListener("click", randomizeCover)
 
 // We've provided one function to get you started
 function viewForm() {
-  // 
+  //
 formShow
 }
 
 randomizeCover()
 
 function randomizeCover() {
-  coverImage.src = covers[getRandomIndex(covers)];
-  coverTitle.innerText = titles[getRandomIndex(titles)];
-  tagLine1.innerText = descriptors[getRandomIndex(descriptors)];
-  tagLine2.innerText = descriptors[getRandomIndex(descriptors)];
+  currentCover = new Cover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)])
+
+  coverImage.src = currentCover.cover;
+  coverTitle.innerText = currentCover.title;
+  tagLine1.innerText =  currentCover.tagline1;
+  tagLine2.innerText = currentCover.tagline2;
+console.log(currentCover)
+  // coverImage.src = covers[getRandomIndex(covers)];
+  // coverTitle.innerText = titles[getRandomIndex(titles)];
+  // tagLine1.innerText = descriptors[getRandomIndex(descriptors)];
+  // tagLine2.innerText = descriptors[getRandomIndex(descriptors)];
 }
 
 function getRandomIndex(array) {
