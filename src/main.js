@@ -25,7 +25,7 @@ var currentCover;
 buttonViewSaved.addEventListener('click', viewSavedCovers)
 buttonMakeNewCover.addEventListener('click', viewForm)
 buttonRandomCover.addEventListener("click", randomizeCover)
-
+buttonHome.addEventListener('click', viewHome)
 
 // Create your event handlers and other functions here 👇
 
@@ -35,6 +35,14 @@ buttonRandomCover.addEventListener("click", randomizeCover)
 //   //
 // formShow
 // }
+function viewHome() {
+  show(homeView);
+  show(buttonRandomCover);
+  show(buttonSaveCover);
+  hide(formShow);
+  hide(savedView);
+  hide(buttonHome);
+}
 
 function viewSavedCovers() {
   show(savedView)
@@ -75,7 +83,7 @@ function randomizeCover() {
 
   //remember to remove CL
   console.log(currentCover)
-  
+
 }
 
 function getRandomIndex(array) {
