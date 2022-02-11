@@ -8,10 +8,11 @@ var tagLine2 = document.querySelector('.tagline-2')
 // These are our buttons
 var buttonMakeNewCover = document.querySelector('.make-new-button')
 var buttonRandomCover = document.querySelector('.random-cover-button')
-var buttonHome = document.querySelector('.home-button-hidden');
+var buttonHome = document.querySelector('.home-button');
 var buttonSaveCover = document.querySelector('.save-cover-button');
 var buttonViewSaved = document.querySelector('.view-saved-button');
 var formShow = document.querySelector('.form-view')
+var homeView = document.querySelector('.home-view')
 
 
 var savedCovers = [
@@ -20,9 +21,8 @@ var savedCovers = [
 var currentCover;
 
 // Add your event listeners here 👇
-// "random-cover-button"
-//element.addEventListener(event, function, useCapture);
-// buttonMakeNewCover.addEventListener('click', __________________)
+
+buttonMakeNewCover.addEventListener('click', viewForm)
 buttonRandomCover.addEventListener("click", randomizeCover)
 
 
@@ -30,9 +30,25 @@ buttonRandomCover.addEventListener("click", randomizeCover)
 
 
 // We've provided one function to get you started
+// function viewForm() {
+//   //
+// formShow
+// }
+
 function viewForm() {
-  //
-formShow
+  show(formShow)
+  show(buttonHome);
+  hide(homeView)
+  hide(buttonSaveCover);
+  hide(buttonRandomCover);
+}
+
+function show(element) {
+  element.classList.remove('hidden')
+}
+
+function hide(element) {
+  element.classList.add('hidden')
 }
 
 randomizeCover()
@@ -44,11 +60,11 @@ function randomizeCover() {
   coverTitle.innerText = currentCover.title;
   tagLine1.innerText =  currentCover.tagline1;
   tagLine2.innerText = currentCover.tagline2;
-console.log(currentCover)
-  // coverImage.src = covers[getRandomIndex(covers)];
-  // coverTitle.innerText = titles[getRandomIndex(titles)];
-  // tagLine1.innerText = descriptors[getRandomIndex(descriptors)];
-  // tagLine2.innerText = descriptors[getRandomIndex(descriptors)];
+
+
+  //remember to remove CL
+  console.log(currentCover)
+  
 }
 
 function getRandomIndex(array) {
