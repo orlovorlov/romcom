@@ -61,20 +61,20 @@ function viewSavedCovers() {
   hide(buttonRandomCover);
   hide(buttonSaveCover);
   for (var i = 0; i < savedCovers.length; i++) {
-console.log(savedCovers[i].cover)
-   sectionSavedCovers.innerHTML += `
-   
-   <section class = 'mini-cover'>
-  
+// console.log(savedCovers[i].cover)
+   if (!savedCovers[i].isSaved){
+     sectionSavedCovers.innerHTML += `
 
+     <section class = 'mini-cover'>
 
-   <img class='cover-ima mini-cover' src=${savedCovers[i].cover}>
-   <h2 class = 'cover-title'>${savedCovers[i].title}</h2>
-   <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
-   </section>
-   `
+     <img class='cover-ima mini-cover' src=${savedCovers[i].cover}>
+     <h2 class = 'cover-title'>${savedCovers[i].title}</h2>
+     <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
+     </section>
+     `
+  }
+  savedCovers[i].isSaved = true
  }
-  
 }
 
 function viewForm() {
@@ -125,7 +125,7 @@ function saveNewCover() {
 
 function createNewBook(event) {
   event.preventDefault()
-  
+
   currentCover = new Cover(textFieldCover.value, textFieldTitle.value, textFieldDescriptor1.value, textFieldDescriptor2.value)
   coverImage.src = currentCover.cover;
   covers.push(coverImage.src);
@@ -135,10 +135,10 @@ function createNewBook(event) {
   descriptors.push(tagLine1.innerText);
   tagLine2.innerText = currentCover.tagline2;
   descriptors.push(tagLine2.innerText);
-  
+
   // console.log(titles, covers, descriptors)
   // console.log(currentCover)
-  
+
   viewHome()
   textFieldCover.value = '';
   textFieldTitle.value = '';
