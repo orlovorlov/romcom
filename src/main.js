@@ -16,6 +16,7 @@ var buttonCreateNewBook = document.querySelector('.create-new-book-button')
 var formShow = document.querySelector('.form-view')
 var homeView = document.querySelector('.home-view')
 var savedView = document.querySelector('.saved-view')
+var sectionSavedCovers = document.querySelector('.saved-covers-section')
 // these are our inputs
 var textFieldCover = document.querySelector('#cover')
 var textFieldTitle = document.querySelector('#title')
@@ -33,6 +34,7 @@ buttonMakeNewCover.addEventListener('click', viewForm)
 buttonRandomCover.addEventListener("click", randomizeCover)
 buttonHome.addEventListener('click', viewHome)
 buttonCreateNewBook.addEventListener('click', createNewBook)
+buttonSaveCover.addEventListener('click', saveNewCover)
 // Create your event handlers and other functions here 👇
 
 
@@ -58,6 +60,21 @@ function viewSavedCovers() {
   hide(formShow)
   hide(buttonRandomCover);
   hide(buttonSaveCover);
+  for (var i = 0; i < savedCovers.length; i++) {
+// console.log(savedCovers[i].cover)
+   if (!savedCovers[i].isSaved){
+     sectionSavedCovers.innerHTML += `
+
+     <section class = 'mini-cover'>
+
+     <img class='cover-ima mini-cover' src=${savedCovers[i].cover}>
+     <h2 class = 'cover-title'>${savedCovers[i].title}</h2>
+     <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
+     </section>
+     `
+  }
+  savedCovers[i].isSaved = true
+ }
 }
 
 function viewForm() {
@@ -87,7 +104,7 @@ function randomizeCover() {
   tagLine1.innerText =  currentCover.tagline1;
   tagLine2.innerText = currentCover.tagline2;
   //remember to remove CL
-  console.log(currentCover)
+  // console.log(currentCover)
 //
 }
 
@@ -99,9 +116,16 @@ function randomizeCover() {
 //   console.log(titles)
 // }
 
+function saveNewCover() {
+  if (currentCover !== savedCovers[0]) {
+    savedCovers.unshift(currentCover)
+  }
+  console.log(savedCovers)
+}
+
 function createNewBook(event) {
   event.preventDefault()
-  
+
   currentCover = new Cover(textFieldCover.value, textFieldTitle.value, textFieldDescriptor1.value, textFieldDescriptor2.value)
   coverImage.src = currentCover.cover;
   covers.push(coverImage.src);
@@ -111,10 +135,10 @@ function createNewBook(event) {
   descriptors.push(tagLine1.innerText);
   tagLine2.innerText = currentCover.tagline2;
   descriptors.push(tagLine2.innerText);
-  
-  console.log(titles, covers, descriptors)
-  console.log(currentCover)
-  
+
+  // console.log(titles, covers, descriptors)
+  // console.log(currentCover)
+
   viewHome()
   textFieldCover.value = '';
   textFieldTitle.value = '';
