@@ -87,7 +87,7 @@ function randomizeCover() {
   tagLine1.innerText =  currentCover.tagline1;
   tagLine2.innerText = currentCover.tagline2;
   //remember to remove CL
-//   console.log(currentCover)
+  console.log(currentCover)
 //
 }
 
@@ -101,20 +101,26 @@ function randomizeCover() {
 
 function createNewBook(event) {
   event.preventDefault()
-  currentCover = new Cover()
-
-  coverImage.src = textFieldCover.value;
+  
+  currentCover = new Cover(textFieldCover.value, textFieldTitle.value, textFieldDescriptor1.value, textFieldDescriptor2.value)
+  coverImage.src = currentCover.cover;
   covers.push(coverImage.src);
-  coverTitle.innerText = textFieldTitle.value;
+  coverTitle.innerText = currentCover.title;
   titles.push(coverTitle.innerText);
-  tagLine1.innerText = textFieldDescriptor1.value;
+  tagLine1.innerText = currentCover.tagline1;
   descriptors.push(tagLine1.innerText);
-  tagLine2.innerText = textFieldDescriptor2.value;
+  tagLine2.innerText = currentCover.tagline2;
   descriptors.push(tagLine2.innerText);
-
+  
   console.log(titles, covers, descriptors)
+  console.log(currentCover)
+  
   viewHome()
-
+  textFieldCover.value = '';
+  textFieldTitle.value = '';
+  textFieldDescriptor1.value = '';
+  textFieldDescriptor2.value = '';
+  // (coverImage.src, coverTitle.innerText, tagLine1.innerText, tagLine2.innerText)
 }
 
 function getRandomIndex(array) {
