@@ -3,6 +3,9 @@ Here we made a cover generator that makes you your own personalized or randomize
 steamy romantic novel cover.
 
       Code Functionality
+
+To deploy the code, navigate to https://orlovorlov.github.io/romcom/
+
 In this code, when you load into the website you get a randomized romance cover off the bat!
 ![Screen Shot 2022-02-12 at 10 30 33 PM](https://user-images.githubusercontent.com/43621994/153771744-2ebb0f3b-b806-45db-a1fb-80fc5dc727f7.png)
 
