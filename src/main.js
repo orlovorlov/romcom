@@ -37,19 +37,7 @@ buttonCreateNewBook.addEventListener('click', createNewBook)
 buttonSaveCover.addEventListener('click', saveNewCover)
 sectionSavedCovers.addEventListener('dblclick', deleteCover)
 
-// Create your event handlers and other functions here 👇
 
-// document.addEventListener('click', function(e) {
-//     e = e || window.event;
-//     var target = e.target || e.srcElement,
-//         text = target.textContent || target.innerText;
-// }, false);
-
-// We've provided one function to get you started
-// function viewForm() {
-//   //
-// formShow
-// }
 
 function viewHome() {
   show(homeView);
@@ -68,13 +56,12 @@ function viewSavedCovers() {
   hide(buttonRandomCover);
   hide(buttonSaveCover);
   for (var i = 0; i < savedCovers.length; i++) {
-// console.log(savedCovers[i].cover)
    if (!savedCovers[i].isSaved){
      sectionSavedCovers.innerHTML += `
 
      <section class = 'mini-cover'>
 
-     <img class='cover-ima mini-cover' src=${savedCovers[i].cover} id= mini-image-${i}>
+     <img class='cover-ima mini-cover' src=${savedCovers[i].cover} id=${savedCovers[i].id}>
      <h2 class = 'cover-title'>${savedCovers[i].title}</h2>
      <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
      </section>
@@ -83,15 +70,23 @@ function viewSavedCovers() {
   savedCovers[i].isSaved = true
  }
 }
-function deleteCover(){
+
+function deleteCover() {
+  console.log(savedCovers)
   console.log(event.target)
   var coverId = event.target.id
   for(var i = 0; i < savedCovers.length; i++){
-    if(coverId === savedCovers[i].id){
+    if(coverId === `${savedCovers[i].id}`) {
       savedCovers.splice(i, 1);
+      console.log(savedCovers[i])
     }
+    
+    savedCovers[i].isSaved = false
   }
+  sectionSavedCovers.innerHTML = ''
   viewSavedCovers()
+  console.log(coverId)
+  console.log(savedCovers)
 }
 
 function viewForm() {
@@ -120,18 +115,7 @@ function randomizeCover() {
   coverTitle.innerText = currentCover.title;
   tagLine1.innerText =  currentCover.tagline1;
   tagLine2.innerText = currentCover.tagline2;
-  //remember to remove CL
-  // console.log(currentCover)
-//
 }
-
-// function saveFormFields() {
-//   covers.push(textFieldCover);
-//   titles.push(textFieldTitle);
-//   descriptors.push(textFieldDescriptor1);
-//   descriptors.push(textFieldDescriptor2);
-//   console.log(titles)
-// }
 
 function saveNewCover() {
   if (currentCover !== savedCovers[0]) {
@@ -153,15 +137,11 @@ function createNewBook(event) {
   tagLine2.innerText = currentCover.tagline2;
   descriptors.push(tagLine2.innerText);
 
-  // console.log(titles, covers, descriptors)
-  // console.log(currentCover)
-
   viewHome()
   textFieldCover.value = '';
   textFieldTitle.value = '';
   textFieldDescriptor1.value = '';
   textFieldDescriptor2.value = '';
-  // (coverImage.src, coverTitle.innerText, tagLine1.innerText, tagLine2.innerText)
 }
 
 function getRandomIndex(array) {
