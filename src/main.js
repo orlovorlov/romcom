@@ -35,8 +35,15 @@ buttonRandomCover.addEventListener("click", randomizeCover)
 buttonHome.addEventListener('click', viewHome)
 buttonCreateNewBook.addEventListener('click', createNewBook)
 buttonSaveCover.addEventListener('click', saveNewCover)
+sectionSavedCovers.addEventListener('dblclick', deleteCover)
+
 // Create your event handlers and other functions here 👇
 
+// document.addEventListener('click', function(e) {
+//     e = e || window.event;
+//     var target = e.target || e.srcElement,
+//         text = target.textContent || target.innerText;
+// }, false);
 
 // We've provided one function to get you started
 // function viewForm() {
@@ -67,7 +74,7 @@ function viewSavedCovers() {
 
      <section class = 'mini-cover'>
 
-     <img class='cover-ima mini-cover' src=${savedCovers[i].cover}>
+     <img class='cover-ima mini-cover' src=${savedCovers[i].cover} id= mini-image-${i}>
      <h2 class = 'cover-title'>${savedCovers[i].title}</h2>
      <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
      </section>
@@ -75,6 +82,16 @@ function viewSavedCovers() {
   }
   savedCovers[i].isSaved = true
  }
+}
+function deleteCover(){
+  console.log(event.target)
+  var coverId = event.target.id
+  for(var i = 0; i < savedCovers.length; i++){
+    if(coverId === savedCovers[i].id){
+      savedCovers.splice(i, 1);
+    }
+  }
+  viewSavedCovers()
 }
 
 function viewForm() {
