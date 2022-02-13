@@ -5,8 +5,8 @@
 
 ### Project Team
 
-  Travis Rollins
-  Dylan Duke
+  Travis Rollins  
+  Dylan Duke  
   Nickolai Orlov
 
   The team designed a cover generator that creates personalized or randomized romantic novel covers.
@@ -41,8 +41,7 @@ Our program will also delete any cover in the "saved covers section" by double-c
 
 ### Project Goals
 
-Our goal as a group was to learn and understand how to utilize Javascript to manipulate the HTML and CSS given to us, and craft a website from that code, with a strong emphasis on learning what the code was doing. Now that the project has been completed,
-it is our opinion and consensus that both members of this team are much more confident and have come out of this project with a greater degree of coding aptitude.
+Our goal as a group was to learn and understand how to utilize Javascript in order to manipulate the HTML and CSS, and to craft a website from that code. We also put a strong emphasis on learning what the code was doing. Now that the project has been completed, it is our opinion and consensus that both members of this team are much more confident and have come out of this project with a greater degree of coding aptitude.
 
 Credits
 The original base code comes from https://github.com/turingschool-examples/romcom
