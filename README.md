@@ -6,7 +6,7 @@ Here we made a cover generator that makes you your own, personalized or randomiz
 This website is fully built and tested in the js-standard-style
 
 Screenshots
-!(https://user-images.githubusercontent.com/43621994/153742803-1542744f-b881-44ac-ae91-570d253f467e.png)
+![Screen Shot 2022-02-12 at 10 38 22 PM](https://user-images.githubusercontent.com/43621994/153742891-38d5f399-de16-46db-a907-ebc19fc48d11.png)
 
 Tech/framework used
 Ex. -
