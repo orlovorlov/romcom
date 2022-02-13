@@ -43,7 +43,6 @@ body {
   margin: 4vh auto;
   position: relative;
   width: 26vw;
-  border: red solid 1px;
 }
 
 .cover-image,
@@ -51,7 +50,6 @@ body {
   object-fit: cover;
   height: 100%;
   width: 100%;
-  border: red solid 1px;
 
 }
 
@@ -61,7 +59,6 @@ body {
   color: #f4ebcd;
   position: absolute;
   width: 100%;
-  border: red solid 1px;
 }
 
 .cover-title {
@@ -72,12 +69,10 @@ body {
   line-height: 90%;
   margin: 0;
   padding: 0.1em;
-  border: red solid 1px;
 }
 
 .cover-title::first-letter {
   font-size: 100px;
-  border: red solid 1px;
 }
 
 .tagline {
@@ -85,7 +80,6 @@ body {
   color: #fcf4dc;
   padding: 5px;
   bottom: 5px;
-  border: red solid 1px;
 }
 
 .price-tag {
@@ -101,7 +95,6 @@ body {
   top: 0;
   filter: opacity(65%);
   mix-blend-mode: screen;
-  border: red solid 1px;
 }
 
 /* ~~~~~~~~~~~~~ SAVED COVERS ~~~~~~~~~~~~~~~ */
@@ -114,7 +107,6 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  border: red solid 1px;
 }
 
 .mini-cover {
@@ -122,18 +114,18 @@ body {
   margin: 1.3vh auto;
   position: relative;
   width: 14vw;
-  border: red solid 1px;
+
 }
 
 .mini-cover > .cover-title {
   bottom: 45px;
   font-size: 40px;
-  border: red solid 1px;
+
 }
 
 .mini-cover > .cover-title::first-letter {
   font-size: 60px;
-  border: red solid 1px;
+
 }
 
 .mini-cover > .tagline {
@@ -142,7 +134,7 @@ body {
   color: #fcf4dc;
   font-size: 10px;
   padding: 5px;
-  border: red solid 1px;
+
 }
 
 /* ~~~~~~~~~~~~~ NEW COVER FORM ~~~~~~~~~~~~~~~ */
@@ -151,7 +143,7 @@ form {
   flex-direction: column;
   align-items: center;
   margin: 30px;
-  border: red solid 1px;
+
 }
 
 form > label,
