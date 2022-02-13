@@ -23,9 +23,7 @@ var textFieldTitle = document.querySelector('#title')
 var textFieldDescriptor1 = document.querySelector('#descriptor1')
 var textFieldDescriptor2 = document.querySelector('#descriptor2')
 
-var savedCovers = [
-  new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
-];
+var savedCovers = [];
 var currentCover;
 
 // Add your event listeners here 👇
@@ -55,6 +53,7 @@ function viewSavedCovers() {
   hide(formShow)
   hide(buttonRandomCover);
   hide(buttonSaveCover);
+  
   for (var i = 0; i < savedCovers.length; i++) {
    if (!savedCovers[i].isSaved){
      sectionSavedCovers.innerHTML += `
@@ -78,15 +77,13 @@ function deleteCover() {
   for(var i = 0; i < savedCovers.length; i++){
     if(coverId === `${savedCovers[i].id}`) {
       savedCovers.splice(i, 1);
-      console.log(savedCovers[i])
     }
-    
+    if(savedCovers.length >= 1){
     savedCovers[i].isSaved = false
+  }
   }
   sectionSavedCovers.innerHTML = ''
   viewSavedCovers()
-  console.log(coverId)
-  console.log(savedCovers)
 }
 
 function viewForm() {
@@ -119,7 +116,9 @@ function randomizeCover() {
 
 function saveNewCover() {
   if (currentCover !== savedCovers[0]) {
+    currentCover.isSaved = false;
     savedCovers.unshift(currentCover)
+
   }
   console.log(savedCovers)
 }
